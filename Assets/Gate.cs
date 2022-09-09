@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RisingPlatform : MonoBehaviour
+public class Gate : MonoBehaviour
 {
     PickerMovement pickerMovement;
-    Animator animator;
 
     void Start()
     {
         pickerMovement = FindObjectOfType<PickerMovement>();
-        animator = GetComponent<Animator>();
     }
 
-    public void PlatformRise()
+    // Update is called once per frame
+    void Update()
     {
-        animator.SetTrigger("RisePlatform");
+        
     }
 
-    public void PickerMove()
+    public void PickerCanMove()
     {
         pickerMovement.canMoveForward = true;
     }

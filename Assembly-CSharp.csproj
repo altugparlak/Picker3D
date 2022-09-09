@@ -53,7 +53,7 @@
     <UnityVersion>2019.4.30f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets/CountTheObjects.cs" />
+    <Compile Include="Assets/Gate.cs" />
     <Compile Include="Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
     <Compile Include="Assets/Joystick Pack/Examples/JoystickSetterExample.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Base/Joystick.cs" />
@@ -61,10 +61,11 @@
     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
-    <Compile Include="Assets/ObjectCollector.cs" />
-    <Compile Include="Assets/ObjectPusher.cs" />
-    <Compile Include="Assets/RisingPlatform.cs" />
+    <Compile Include="Assets/Scripts/CountTheObjects.cs" />
+    <Compile Include="Assets/Scripts/ObjectCollector.cs" />
+    <Compile Include="Assets/Scripts/ObjectPusher.cs" />
     <Compile Include="Assets/Scripts/PickerMovement.cs" />
+    <Compile Include="Assets/Scripts/RisingPlatform.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

@@ -19,7 +19,6 @@ public class ObjectPusher : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Push!");
         if (other.tag == "Object")
         {
             //other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, -forceAmount), ForceMode.Force);
