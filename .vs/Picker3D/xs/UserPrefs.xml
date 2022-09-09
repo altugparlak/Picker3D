@@ -1,12 +1,14 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PickerMovement.cs">
+﻿<Properties StartupConfiguration="{60F9E020-740A-CE30-E82F-32A858FF1837}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ObjectPusher.cs">
     <Files>
-      <File FileName="Assets/Scripts/PickerMovement.cs" Line="17" Column="41" />
+      <File FileName="Assets/Scripts/PickerMovement.cs" Line="45" Column="1" />
+      <File FileName="Assets/CountTheObjects.cs" Line="14" Column="39" />
+      <File FileName="Assets/ObjectPusher.cs" Line="7" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="80245dc1-74c4-401e-b2c6-9e284aa36c1a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b979f716-818e-4b22-8055-1314cb786705" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

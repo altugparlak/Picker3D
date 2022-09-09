@@ -11,6 +11,7 @@ public class PickerMovement : MonoBehaviour
     public Joystick joystick;
 
     private bool firstTouch = false;
+    public bool canMoveForward = false;
 
     Rigidbody rb;
 
@@ -29,16 +30,19 @@ public class PickerMovement : MonoBehaviour
             {
                 startImages.SetActive(false);
                 firstTouch = true;
+                canMoveForward = true;
             }
+        }
+        if (canMoveForward)
+        {
+            MoveForward();
+            MoveWithControllerVelocity();
         }
         else
         {
-            MoveForward();
+            rb.velocity = new Vector3(0f, 0f, 0f);
         }
 
-
-        MoveWithControllerVelocity();
-        Debug.Log(rb.velocity.z);
     }
 
     private void MoveWithControllerVelocity()
