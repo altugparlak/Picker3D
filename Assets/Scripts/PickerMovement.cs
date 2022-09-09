@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class PickerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 1f;
+    [SerializeField] private float forwardSpeed = 1f;
+    [SerializeField] private float horizontalSpeed = 1f;
+
     [SerializeField] private GameObject startImages;
     public Joystick joystick;
-    public CharacterController characterController;
 
     private bool firstTouch = false;
+
+    Rigidbody rb;
 
 
     private void Start()
     {
-        characterController.enabled = true;
-
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -35,25 +37,22 @@ public class PickerMovement : MonoBehaviour
         }
 
 
-        MoveWithController();
-
+        MoveWithControllerVelocity();
+        Debug.Log(rb.velocity.z);
     }
 
-    private void MoveWithController()
+    private void MoveWithControllerVelocity()
     {
         float moveHorizontal = joystick.Horizontal;
-        Vector3 direction = new Vector3(moveHorizontal, 0f, 0f);
+        Vector3 direction = new Vector3(-moveHorizontal, 0f, rb.velocity.z);
 
-        if (direction.magnitude >= 0.1f)
-        {
-            characterController.Move(-direction * movementSpeed * Time.deltaTime);
-        }
+        rb.velocity = direction * horizontalSpeed;
     }
 
     private void MoveForward()
     {
         Vector3 direction = new Vector3(0f, 0f, -1f);
-        characterController.Move(direction * movementSpeed * Time.deltaTime);
+        rb.velocity = direction * forwardSpeed;
     }
 
 }
