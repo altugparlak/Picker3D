@@ -22,11 +22,9 @@ public class ObjectPusher : MonoBehaviour
         Debug.Log("Push!");
         if (other.tag == "Object")
         {
-            Debug.Log("Push!");
             //other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, -forceAmount), ForceMode.Force);
             other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, -speedAmount);
             other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, forceAmount, 0f), ForceMode.Force);
-
         }
     }
 }
