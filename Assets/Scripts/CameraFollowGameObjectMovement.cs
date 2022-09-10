@@ -12,7 +12,7 @@ public class CameraFollowGameObjectMovement : MonoBehaviour
         pickerMovement = FindObjectOfType<PickerMovement>();
         pickerJump = FindObjectOfType<PickerJump>();
     }
-
+    
     private void FixedUpdate()
     {
         if (pickerMovement != null)

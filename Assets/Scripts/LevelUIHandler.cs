@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelUIHandler : MonoBehaviour
 {
     [SerializeField] private Image levelBox1;
     [SerializeField] private Image levelBox2;
     [SerializeField] private Image levelBox3;
+
+    [SerializeField] private Text currentLevelText;
+    [SerializeField] private Text nextLevelText;
+
 
     void Start()
     {
