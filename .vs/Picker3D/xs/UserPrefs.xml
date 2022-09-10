@@ -1,11 +1,13 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CountTheObjects.cs">
+﻿<Properties StartupConfiguration="{60F9E020-740A-CE30-E82F-32A858FF1837}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CameraFollowGameObjectMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/PickerMovement.cs" Line="44" Column="1" />
-      <File FileName="Assets/Gate.cs" Line="23" Column="1" />
-      <File FileName="Assets/Scripts/RisingPlatform.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PickerMovement.cs" Line="14" Column="1" />
+      <File FileName="Assets/Gate.cs" Line="24" Column="35" />
+      <File FileName="Assets/Scripts/RisingPlatform.cs" Line="22" Column="42" />
       <File FileName="Assets/Scripts/ObjectCollector.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CountTheObjects.cs" Line="1" Column="1" />
+      <File FileName="Assets/PickerJump.cs" Line="16" Column="40" />
+      <File FileName="Assets/CameraFollowGameObjectMovement.cs" Line="11" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
