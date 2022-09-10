@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
+    [SerializeField] private GameObject gateText;
     PickerMovement pickerMovement;
 
     void Start()
@@ -20,5 +21,6 @@ public class Gate : MonoBehaviour
     public void PickerCanMove()
     {
         pickerMovement.canMoveForward = true;
+        gateText.SetActive(false);
     }
 }
