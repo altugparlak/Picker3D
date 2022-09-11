@@ -5,8 +5,10 @@ using UnityEngine;
 public class GameSession : MonoBehaviour
 {
     [SerializeField] private List<GameObject> levels;
-    [SerializeField] private GameObject player;
-    
+    [SerializeField] public GameObject pickerMove;
+    [SerializeField] public GameObject pickerJump;
+
+
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("GameSession");
@@ -25,7 +27,7 @@ public class GameSession : MonoBehaviour
         Instantiate(levels[0], new Vector3(0f, 0f, 0f), Quaternion.identity);
 
         Vector3 playerSpawnPosition = levels[0].transform.GetChild(0).gameObject.transform.position;
-        Instantiate(player, playerSpawnPosition, Quaternion.identity);
+        Instantiate(pickerMove, playerSpawnPosition, Quaternion.identity);
 
 
     }

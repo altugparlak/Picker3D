@@ -30,7 +30,6 @@ public class PickerJump : MonoBehaviour
         else
         {
             rb.velocity = new Vector3(0f, rb.velocity.y, -startSpeed);
-            Debug.Log(rb.velocity.z);
         }
     }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1892929930733616240}
   m_Layer: 0
   m_Name: GameSession
-  m_TagString: Untagged
+  m_TagString: GameSession
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,4 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 3042137511044308183, guid: 1d4811db33b57479d93bc5ca045956e4, type: 3}
-  player: {fileID: 4946755585573647961, guid: 7f701229179244dfbb1378dc5cb8d774, type: 3}
+  pickerMove: {fileID: 4946755585573647961, guid: 7f701229179244dfbb1378dc5cb8d774,
+    type: 3}
+  pickerJump: {fileID: 4946755585573647961, guid: 777c621265089462880528f84cdfaf29,
+    type: 3}

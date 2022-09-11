@@ -1,19 +1,21 @@
 ﻿<Properties StartupConfiguration="{60F9E020-740A-CE30-E82F-32A858FF1837}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PickerMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/RampStartPostion.cs">
     <Files>
-      <File FileName="Assets/Scripts/PickerMovement.cs" Line="39" Column="44" />
+      <File FileName="Assets/Scripts/PickerMovement.cs" Line="27" Column="1" />
       <File FileName="Assets/Scripts/RisingPlatform.cs" Line="27" Column="46" />
       <File FileName="Assets/Scripts/ObjectCollector.cs" Line="37" Column="1" />
-      <File FileName="Assets/Scripts/CountTheObjects.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/CountTheObjects.cs" Line="8" Column="6" />
       <File FileName="Assets/Scripts/LevelUIHandler.cs" Line="14" Column="34" />
       <File FileName="Assets/Scripts/Gate.cs" Line="31" Column="11" />
-      <File FileName="Assets/GameSession.cs" Line="13" Column="1" />
-      <File FileName="Assets/RampInitialize.cs" Line="12" Column="13" />
+      <File FileName="Assets/GameSession.cs" Line="8" Column="50" />
+      <File FileName="Assets/Scripts/PickerJump.cs" Line="1" Column="1" />
+      <File FileName="Assets/RampInitialize.cs" Line="10" Column="36" />
+      <File FileName="Assets/RampStartPostion.cs" Line="16" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="86983275-07b3-48bd-bebd-5d31b6133809" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="52452073-14dd-45db-929e-cc90226d7157" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

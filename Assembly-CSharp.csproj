@@ -64,6 +64,7 @@
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
      <Compile Include="Assets\RampInitialize.cs" />
+     <Compile Include="Assets\RampStartPostion.cs" />
      <Compile Include="Assets\Scripts\CameraFollowGameObjectMovement.cs" />
      <Compile Include="Assets\Scripts\CountTheObjects.cs" />
      <Compile Include="Assets\Scripts\Gate.cs" />

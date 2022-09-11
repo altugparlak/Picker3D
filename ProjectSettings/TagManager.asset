@@ -8,6 +8,7 @@ TagManager:
   - Object
   - GameSession
   - Canvas
+  - PickerJump
   layers:
   - Default
   - TransparentFX

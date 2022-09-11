@@ -12,6 +12,8 @@ public class PickerMovement : MonoBehaviour
 
     private bool firstTouch = false;
     public bool canMoveForward = false;
+    public bool canMoveToTheClosestPoint = false;
+    public Vector3 closestPoint;
 
     Rigidbody rb;
     GameObject[] canvasObjects;
@@ -47,6 +49,10 @@ public class PickerMovement : MonoBehaviour
             MoveForward();
             MoveWithControllerVelocity();
         }
+        else if (canMoveToTheClosestPoint && !canMoveForward)
+        {
+            MovingToTheClosestPoint();
+        }
         else
         {
             rb.velocity = new Vector3(0f, 0f, 0f);
@@ -66,6 +72,14 @@ public class PickerMovement : MonoBehaviour
     {
         Vector3 direction = new Vector3(0f, 0f, -1f);
         rb.velocity = direction * forwardSpeed;
+    }
+
+    private void MovingToTheClosestPoint()
+    {
+        // Move our position a step closer to the target.
+        var step = 1 * Time.deltaTime; // calculate distance to move
+        transform.position = Vector3.MoveTowards(transform.position, closestPoint, step);
+
     }
 
 }
