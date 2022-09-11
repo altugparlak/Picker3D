@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class CameraFollowGameObjectMovement : MonoBehaviour
 {
+
+    public bool lookingForPickerJump = false;
     PickerMovement pickerMovement;
     PickerJump pickerJump;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +29,18 @@ public class CameraFollowGameObjectMovement : MonoBehaviour
             transform.position = new Vector3(0f, pickerJump.transform.position.y, pickerJump.transform.position.z - 1.2f);
         }
 
+        if (lookingForPickerJump)
+        {
+            pickerJump = FindObjectOfType<PickerJump>();
+            if (pickerJump != null)
+            {
+                lookingForPickerJump = false;
+            }
+        }
+    }
+
+    public void findPickerMovement()
+    {
+        pickerMovement = FindObjectOfType<PickerMovement>();
     }
 }
