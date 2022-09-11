@@ -14,17 +14,14 @@ public class PickerMovement : MonoBehaviour
     public bool canMoveForward = false;
 
     Rigidbody rb;
+    GameObject[] canvasObjects;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         joystick = FindObjectOfType<FloatingJoystick>();
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Canvas");
-        foreach (GameObject image in objs)
-        {
-            image.SetActive(false);
-        }
+        canvasObjects = GameObject.FindGameObjectsWithTag("Canvas");
 
     }
 
@@ -36,6 +33,11 @@ public class PickerMovement : MonoBehaviour
             if (Input.touchCount > 0)
             {
                 //startImages.SetActive(false);
+
+                foreach (GameObject image in canvasObjects)
+                {
+                    image.SetActive(false);
+                }
                 firstTouch = true;
                 canMoveForward = true;
             }
