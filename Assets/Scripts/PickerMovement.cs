@@ -7,7 +7,7 @@ public class PickerMovement : MonoBehaviour
     [SerializeField] private float forwardSpeed = 1f;
     [SerializeField] private float horizontalSpeed = 1f;
 
-    [SerializeField] private GameObject startImages;
+    //private GameObject startImages;
     public Joystick joystick;
 
     private bool firstTouch = false;
@@ -19,6 +19,13 @@ public class PickerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        joystick = FindObjectOfType<FloatingJoystick>();
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Canvas");
+        foreach (GameObject image in objs)
+        {
+            image.SetActive(false);
+        }
+
     }
 
     void Update()
@@ -28,7 +35,7 @@ public class PickerMovement : MonoBehaviour
         {
             if (Input.touchCount > 0)
             {
-                startImages.SetActive(false);
+                //startImages.SetActive(false);
                 firstTouch = true;
                 canMoveForward = true;
             }

@@ -35,7 +35,6 @@ public class ObjectCollector : MonoBehaviour
             if (collectedObjects >= requiredObjectAmount)
             {
                 pickerMovement.transform.GetChild(0).gameObject.GetComponent<ObjectPusher>().boxCollider.enabled = false;
-                Debug.Log("Good to go!");
                 Invoke("PlatformRiseUp", 1.2f);
             }
         }

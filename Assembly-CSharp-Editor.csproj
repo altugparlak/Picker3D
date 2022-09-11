@@ -644,6 +644,9 @@
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/altugparlak/Desktop/Unity/MyUnityGames/Picker3D/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>/Users/altugparlak/Desktop/Unity/MyUnityGames/Picker3D/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>/Users/altugparlak/Desktop/Unity/MyUnityGames/Picker3D/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
@@ -676,6 +679,9 @@
  </Reference>
  <Reference Include="Unity.Mobile.AndroidLogcat.Editor">
  <HintPath>/Users/altugparlak/Desktop/Unity/MyUnityGames/Picker3D/Library/ScriptAssemblies/Unity.Mobile.AndroidLogcat.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>/Users/altugparlak/Desktop/Unity/MyUnityGames/Picker3D/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>/Users/altugparlak/Desktop/Unity/MyUnityGames/Picker3D/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
