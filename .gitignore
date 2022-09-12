@@ -72,6 +72,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Library/ArtifactDB
 Library/ArtifactDB-lock
+Library/Artifacts
 Library/Artifacts/13/1368a666f0f4a17b293a5ccb97e417f7
 Library/Artifacts/16/16321f08bac8d572179a296e45983dc0
 Library/Artifacts/19/19deba1e492932a124c1547c00f43636
@@ -103,6 +104,7 @@ Library/SourceAssetDB
 Library/SourceAssetDB-lock
 Library/StateCache/Hierarchy/c1a19e-mainStage.json
 Temp/__Backupscenes/0.backup
+Temp/UnityTempFile
 Temp/UnityTempFile-021b4c5b7552b42dbbb6fb9dd3408c74
 Temp/UnityTempFile-06ca5b5a50c4c47f995cd156af56ca99
 Temp/UnityTempFile-110e27dd2039c4e4599c4bd7670b5883
