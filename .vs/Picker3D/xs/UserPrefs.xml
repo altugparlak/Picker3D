@@ -1,8 +1,8 @@
-﻿<Properties StartupConfiguration="{60F9E020-740A-CE30-E82F-32A858FF1837}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameSession.cs">
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.ide.visualstudio@2.0.11/Editor/VisualStudioEditor.cs">
     <Files>
       <File FileName="Assets/Scripts/CameraFollowGameObjectMovement.cs" Line="13" Column="1" />
-      <File FileName="Assets/Scripts/PickerMovement.cs" Line="36" Column="6" />
+      <File FileName="Assets/Scripts/PickerMovement.cs" Line="92" Column="38" />
       <File FileName="Assets/Scripts/RisingPlatform.cs" Line="15" Column="1" />
       <File FileName="Assets/Scripts/ObjectCollector.cs" Line="55" Column="11" />
       <File FileName="Assets/Scripts/CountTheObjects.cs" Line="18" Column="6" />
@@ -12,13 +12,15 @@
       <File FileName="Assets/PickerThrover.cs" Line="14" Column="68" />
       <File FileName="Assets/RemoveRigidbodyConstraints.cs" Line="12" Column="54" />
       <File FileName="Assets/LandingPoint.cs" Line="41" Column="40" />
-      <File FileName="Assets/Scripts/GameSession.cs" Line="123" Column="51" />
+      <File FileName="Assets/Scripts/GameSession.cs" Line="133" Column="43" />
       <File FileName="Assets/Scripts/RampInitialize.cs" Line="34" Column="82" />
       <File FileName="Assets/Scripts/RampStartPostion.cs" Line="17" Column="5" />
       <File FileName="Assets/MoneyDiamond.cs" Line="10" Column="27" />
       <File FileName="Assets/Level.cs" Line="7" Column="1" />
-      <File FileName="Assets/LevelStartPosition.cs" Line="33" Column="45" />
+      <File FileName="Assets/LevelStartPosition.cs" Line="26" Column="14" />
       <File FileName="Assets/CanvasScript.cs" Line="12" Column="10" />
+      <File FileName="../../../adsız klasör/Picker3D-main/Assets/Scripts/RemoveRigidbodyConstraints.cs" Line="8" Column="1" />
+      <File FileName="Library/PackageCache/com.unity.ide.visualstudio@2.0.11/Editor/VisualStudioEditor.cs" Line="361" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
