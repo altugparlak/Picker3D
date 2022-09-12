@@ -5,11 +5,16 @@ using UnityEngine;
 public class RampInitialize : MonoBehaviour
 {
     [SerializeField] private GameObject positionsHolder;
+    [SerializeField] private Transform nextLevelTransform;
+
     private List<Transform> positions;
     private Transform target;
 
+    GameSession gameSession;
+
     private void Start()
     {
+        gameSession = FindObjectOfType<GameSession>();
         positions = new List<Transform>();
         for (int i = 0; i < positionsHolder.transform.childCount; i++)
         {
@@ -22,6 +27,8 @@ public class RampInitialize : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("RampInitialize!");
+
+            Instantiate(gameSession.levels[0], nextLevelTransform.position, Quaternion.identity);
             other.GetComponent<PickerMovement>().canMoveForward = false;
             GetClosestPosition(positions, other.transform.position);
             other.GetComponent<PickerMovement>().canMoveToTheClosestPoint = true;

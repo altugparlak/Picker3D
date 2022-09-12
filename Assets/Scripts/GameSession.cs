@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> levels;
+    [SerializeField] public List<GameObject> levels;
     [SerializeField] public GameObject pickerMove;
     [SerializeField] public GameObject pickerJump;
 

@@ -6,12 +6,10 @@ public class Gate : MonoBehaviour
 {
     [SerializeField] private GameObject gateText;
     PickerMovement pickerMovement;
-    AudioSource audioSource;
 
     void Start()
     {
         pickerMovement = FindObjectOfType<PickerMovement>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

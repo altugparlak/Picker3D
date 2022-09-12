@@ -1,16 +1,18 @@
 ﻿<Properties StartupConfiguration="{60F9E020-740A-CE30-E82F-32A858FF1837}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PickerJump.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RampInitialize.cs">
     <Files>
-      <File FileName="Assets/Scripts/CameraFollowGameObjectMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CameraFollowGameObjectMovement.cs" Line="40" Column="1" />
       <File FileName="Assets/Scripts/PickerMovement.cs" />
       <File FileName="Assets/Scripts/RisingPlatform.cs" />
       <File FileName="Assets/Scripts/ObjectCollector.cs" />
       <File FileName="Assets/Scripts/CountTheObjects.cs" />
       <File FileName="Assets/Scripts/LevelUIHandler.cs" />
-      <File FileName="Assets/Scripts/Gate.cs" />
-      <File FileName="Assets/Scripts/PickerJump.cs" Line="23" Column="22" />
-      <File FileName="Assets/PickerThrover.cs" />
-      <File FileName="Assets/LandingPoint.cs" />
+      <File FileName="Assets/Scripts/Gate.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/PickerJump.cs" Line="43" Column="85" />
+      <File FileName="Assets/PickerThrover.cs" Line="14" Column="86" />
+      <File FileName="Assets/LandingPoint.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/GameSession.cs" Line="28" Column="1" />
+      <File FileName="Assets/Scripts/RampInitialize.cs" Line="7" Column="57" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
