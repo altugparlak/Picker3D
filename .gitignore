@@ -72,6 +72,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Library/ArtifactDB
 Library/ArtifactDB-lock
+Library
 Library/Artifacts
 Library/Artifacts/13/1368a666f0f4a17b293a5ccb97e417f7
 Library/Artifacts/16/16321f08bac8d572179a296e45983dc0
@@ -632,3 +633,8 @@ Temp/UnityTempFile-fa5884ab58f7b4193835eb9811f39629
 Temp/UnityTempFile-fabdded43a2f7480c8e54ba80b43d789
 Temp/UnityTempFile-fdf9cff0c5b99476eaa123301fd4c762
 Temp/UnityTempFile-feeb4a9d8b2b54dc797d266021a750a0
+obj
+.vs/Picker3D/xs/UserPrefs.xml
+Library/SourceAssetDB
+obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache
+obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
