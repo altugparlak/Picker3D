@@ -28,7 +28,7 @@ public class RampInitialize : MonoBehaviour
         {
             Debug.Log("RampInitialize!");
 
-            Instantiate(gameSession.levels[0], nextLevelTransform.position, Quaternion.identity);
+            gameSession.SpawnNextLevel(nextLevelTransform);
             other.GetComponent<PickerMovement>().canMoveForward = false;
             GetClosestPosition(positions, other.transform.position);
             other.GetComponent<PickerMovement>().canMoveToTheClosestPoint = true;

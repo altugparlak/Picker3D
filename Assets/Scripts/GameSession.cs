@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour
 {
-    [SerializeField] public List<GameObject> levels;
+    [Header("Pickers")]
     [SerializeField] public GameObject pickerMove;
     [SerializeField] public GameObject pickerJump;
+    [SerializeField] public GameObject pickerJumpOnTheScene;
+    [SerializeField] public GameObject pickerMoveOnTheScene;
+
+
+    [Header("Levels")]
+    [SerializeField] public List<GameObject> levels;
+    [SerializeField] public List<GameObject> levelsInTheScene;
+
 
 
     void Awake()
@@ -23,13 +31,39 @@ public class GameSession : MonoBehaviour
 
     private void Start()
     {
-        
-        Instantiate(levels[0], new Vector3(0f, 0f, 0f), Quaternion.identity);
+        levelsInTheScene = new List<GameObject>();
+        GameObject level = Instantiate(levels[0], new Vector3(0f, 0f, 0f), Quaternion.identity);
+        levelsInTheScene.Add(level);
 
-        Vector3 playerSpawnPosition = levels[0].transform.GetChild(0).gameObject.transform.position;
-        Instantiate(pickerMove, playerSpawnPosition, Quaternion.identity);
+        Transform playerSpawnPosition = levels[0].transform.GetChild(0).gameObject.transform;
+        SwitchToThePickerMove(playerSpawnPosition);
+        //Instantiate(pickerMove, playerSpawnPosition, Quaternion.identity);
 
+    }
 
+    public void SpawnNextLevel(Transform nextLevelTransform)
+    {
+        GameObject level = Instantiate(levels[0], nextLevelTransform.position, Quaternion.identity);
+        levelsInTheScene.Add(level);
+
+    }
+
+    public void SwitchToThePickerMove(Transform spawnPosition)
+    {
+        if (pickerJumpOnTheScene!= null)
+            Destroy(pickerJumpOnTheScene);
+
+        GameObject picker = Instantiate(pickerMove, spawnPosition.position, Quaternion.identity);
+        pickerMoveOnTheScene = picker;
+    }
+
+    public void SwitchToThePickerJump(Transform spawnPosition)
+    {
+        if (pickerMoveOnTheScene != null)
+            Destroy(pickerMoveOnTheScene);
+
+        GameObject picker = Instantiate(pickerJump, spawnPosition.position, Quaternion.identity);
+        pickerJumpOnTheScene = picker;
     }
 
 }

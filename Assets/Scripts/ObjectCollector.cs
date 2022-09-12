@@ -10,14 +10,14 @@ public class ObjectCollector : MonoBehaviour
     [SerializeField] private int requiredObjectAmount = 20;
 
     PickerMovement pickerMovement;
+    GameSession gameSession;
 
     private int collectedObjects = 0;
 
     void Start()
     {
-        pickerMovement = FindObjectOfType<PickerMovement>();
+        gameSession = FindObjectOfType<GameSession>();
         pointText.text = $" {0} / {requiredObjectAmount}";
-
     }
 
     void Update()
@@ -34,6 +34,7 @@ public class ObjectCollector : MonoBehaviour
 
             if (collectedObjects >= requiredObjectAmount)
             {
+                pickerMovement = gameSession.pickerMoveOnTheScene.GetComponent<PickerMovement>();
                 pickerMovement.transform.GetChild(0).gameObject.GetComponent<ObjectPusher>().boxCollider.enabled = false;
                 Invoke("PlatformRiseUp", 1.2f);
             }

@@ -17,6 +17,7 @@ public class PickerMovement : MonoBehaviour
 
     Rigidbody rb;
     GameObject[] canvasObjects;
+    CameraFollowGameObjectMovement cameraFollowGameObjectMovement;
 
 
     private void Start()
@@ -24,6 +25,8 @@ public class PickerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         joystick = FindObjectOfType<FloatingJoystick>();
         canvasObjects = GameObject.FindGameObjectsWithTag("Canvas");
+        cameraFollowGameObjectMovement = FindObjectOfType<CameraFollowGameObjectMovement>();
+        cameraFollowGameObjectMovement.lookingForPickerMove = true;
 
     }
 

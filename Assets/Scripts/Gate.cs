@@ -5,11 +5,14 @@ using UnityEngine;
 public class Gate : MonoBehaviour
 {
     [SerializeField] private GameObject gateText;
+
+
+    GameSession gameSession;
     PickerMovement pickerMovement;
 
     void Start()
     {
-        pickerMovement = FindObjectOfType<PickerMovement>();
+        gameSession = FindObjectOfType<GameSession>();
     }
 
     // Update is called once per frame
@@ -20,6 +23,7 @@ public class Gate : MonoBehaviour
 
     public void PickerCanMove()
     {
+        pickerMovement = gameSession.pickerMoveOnTheScene.GetComponent<PickerMovement>();
         pickerMovement.canMoveForward = true;
         gateText.SetActive(false);
     }

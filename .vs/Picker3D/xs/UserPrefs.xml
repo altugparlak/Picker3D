@@ -1,18 +1,22 @@
 ﻿<Properties StartupConfiguration="{60F9E020-740A-CE30-E82F-32A858FF1837}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RampInitialize.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameSession.cs">
     <Files>
-      <File FileName="Assets/Scripts/CameraFollowGameObjectMovement.cs" Line="40" Column="1" />
-      <File FileName="Assets/Scripts/PickerMovement.cs" />
-      <File FileName="Assets/Scripts/RisingPlatform.cs" />
-      <File FileName="Assets/Scripts/ObjectCollector.cs" />
-      <File FileName="Assets/Scripts/CountTheObjects.cs" />
-      <File FileName="Assets/Scripts/LevelUIHandler.cs" />
-      <File FileName="Assets/Scripts/Gate.cs" Line="13" Column="1" />
-      <File FileName="Assets/Scripts/PickerJump.cs" Line="43" Column="85" />
-      <File FileName="Assets/PickerThrover.cs" Line="14" Column="86" />
-      <File FileName="Assets/LandingPoint.cs" Line="14" Column="1" />
-      <File FileName="Assets/Scripts/GameSession.cs" Line="28" Column="1" />
-      <File FileName="Assets/Scripts/RampInitialize.cs" Line="7" Column="57" />
+      <File FileName="Assets/Scripts/CameraFollowGameObjectMovement.cs" Line="8" Column="37" />
+      <File FileName="Assets/Scripts/PickerMovement.cs" Line="29" Column="68" />
+      <File FileName="Assets/Scripts/RisingPlatform.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/ObjectCollector.cs" Line="37" Column="1" />
+      <File FileName="Assets/Scripts/CountTheObjects.cs" Line="8" Column="6" />
+      <File FileName="Assets/Scripts/LevelUIHandler.cs" Line="14" Column="34" />
+      <File FileName="Assets/Scripts/Gate.cs" Line="14" Column="6" />
+      <File FileName="Assets/Scripts/PickerJump.cs" Line="48" Column="15" />
+      <File FileName="Assets/PickerThrover.cs" Line="14" Column="71" />
+      <File FileName="Assets/RemoveRigidbodyConstraints.cs" Line="12" Column="54" />
+      <File FileName="Assets/LandingPoint.cs" Line="37" Column="32" />
+      <File FileName="Assets/Scripts/GameSession.cs" Line="60" Column="20" />
+      <File FileName="Assets/Scripts/RampInitialize.cs" Line="31" Column="58" />
+      <File FileName="Assets/Scripts/RampStartPostion.cs" Line="24" Column="39" />
+      <File FileName="Assets/MoneyDiamond.cs" Line="50" Column="64" />
+      <File FileName="Assets/Level.cs" Line="13" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
