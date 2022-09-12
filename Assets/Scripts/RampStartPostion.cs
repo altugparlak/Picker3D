@@ -23,8 +23,8 @@ public class RampStartPostion : MonoBehaviour
             cameraFollowGameObjectMovement.lookingForPickerJump = true;
             Destroy(other.gameObject);
             gameSession.SwitchToThePickerJump(other.gameObject.transform);
-            //Instantiate(gameSession.pickerJump.gameObject, other.gameObject.transform.position, Quaternion.identity);
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            gameSession.levelEnded = true;
 
         }
     }

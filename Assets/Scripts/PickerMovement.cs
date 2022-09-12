@@ -13,19 +13,24 @@ public class PickerMovement : MonoBehaviour
     private bool firstTouch = false;
     public bool canMoveForward = false;
     public bool canMoveToTheClosestPoint = false;
+    public bool canMoveToTheNextLevel = false;
+    public bool pickerInTheStartPosition = false;
+    public bool IsCountinueButtonClicked = true;
+    public bool dragToStart = false;
     public Vector3 closestPoint;
+    public Vector3 newLevelPosition;
 
     Rigidbody rb;
-    GameObject[] canvasObjects;
     CameraFollowGameObjectMovement cameraFollowGameObjectMovement;
+    GameSession gameSession;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         joystick = FindObjectOfType<FloatingJoystick>();
-        canvasObjects = GameObject.FindGameObjectsWithTag("Canvas");
         cameraFollowGameObjectMovement = FindObjectOfType<CameraFollowGameObjectMovement>();
+        gameSession = FindObjectOfType<GameSession>();
         cameraFollowGameObjectMovement.lookingForPickerMove = true;
 
     }
@@ -35,14 +40,9 @@ public class PickerMovement : MonoBehaviour
 
         if (!firstTouch)
         {
-            if (Input.touchCount > 0)
+            if (dragToStart && pickerInTheStartPosition && IsCountinueButtonClicked)
             {
-                //startImages.SetActive(false);
-
-                foreach (GameObject image in canvasObjects)
-                {
-                    image.SetActive(false);
-                }
+                gameSession.everyObjectInTheStartScene.SetActive(false);
                 firstTouch = true;
                 canMoveForward = true;
             }
@@ -55,6 +55,10 @@ public class PickerMovement : MonoBehaviour
         else if (canMoveToTheClosestPoint && !canMoveForward)
         {
             MovingToTheClosestPoint();
+        }
+        else if (canMoveToTheNextLevel)
+        {
+            MovingToTheNextLevel();
         }
         else
         {
@@ -82,6 +86,14 @@ public class PickerMovement : MonoBehaviour
         // Move our position a step closer to the target.
         var step = 1 * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, closestPoint, step);
+
+    }
+
+    private void MovingToTheNextLevel()
+    {
+        // Move our position a step closer to the target.
+        var step = 3 * Time.deltaTime; // calculate distance to move
+        transform.position = Vector3.MoveTowards(transform.position, newLevelPosition, step);
 
     }
 

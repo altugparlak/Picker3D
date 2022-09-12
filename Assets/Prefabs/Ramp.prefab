@@ -1811,7 +1811,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.4, z: -11.05}
+  m_Size: {x: 2, y: 0.4, z: 12}
   m_Center: {x: 0, y: 3, z: -12.27}
 --- !u!114 &7425455600629883562
 MonoBehaviour:
@@ -1826,6 +1826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gates: {fileID: 1492458186093605936}
+  gameSession: {fileID: 0}
 --- !u!1 &1650823064147622864
 GameObject:
   m_ObjectHideFlags: 0
@@ -9929,8 +9930,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7, y: 0.58, z: 0.19}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.7, y: 1.16, z: 0.19}
+  m_Center: {x: 0, y: 0.63, z: 0}
 --- !u!1 &1650823065662447055
 GameObject:
   m_ObjectHideFlags: 0

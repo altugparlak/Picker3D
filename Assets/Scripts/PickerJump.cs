@@ -10,6 +10,7 @@ public class PickerJump : MonoBehaviour
     private float currentSpeed = 1.5f;
     private bool firstTouch = false;
     public bool cantMove = false;
+    public bool pickerIsJumped = false;
 
     Rigidbody rb;
     Touch touch;
@@ -29,7 +30,7 @@ public class PickerJump : MonoBehaviour
             {
                 touch = Input.GetTouch(0);
 
-                if (touch.phase == TouchPhase.Began)
+                if (touch.phase == TouchPhase.Began && !pickerIsJumped)
                 {
                     Debug.Log("Boost!");
                     currentSpeed += touchSpeedIncrement;

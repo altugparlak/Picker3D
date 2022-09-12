@@ -493,8 +493,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 648760732875261553}
   - {fileID: 2351420678210858489}
+  - {fileID: 648760732875261553}
   - {fileID: 3042137511601801555}
   - {fileID: 3042137511751979633}
   - {fileID: 3042137510496576644}
@@ -681,6 +681,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2351420678210858489}
+  - component: {fileID: 3721683367349098247}
+  - component: {fileID: 6058917229655095189}
   m_Layer: 0
   m_Name: PickerSpawnPoint
   m_TagString: Untagged
@@ -700,8 +702,33 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3042137511044308182}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3721683367349098247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090027620218792647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486adfc87fff54ef2b837ceb69b6c8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &6058917229655095189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090027620218792647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4686713526424740225
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +852,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3042137511044308182}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4812247193589489883
 GameObject:
