@@ -9,6 +9,7 @@ TagManager:
   - GameSession
   - Canvas
   - PickerJump
+  - MainCanvas
   layers:
   - Default
   - TransparentFX

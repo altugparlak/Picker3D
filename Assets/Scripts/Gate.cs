@@ -6,7 +6,6 @@ public class Gate : MonoBehaviour
 {
     [SerializeField] private GameObject gateText;
 
-
     GameSession gameSession;
     PickerMovement pickerMovement;
 
@@ -23,9 +22,21 @@ public class Gate : MonoBehaviour
 
     public void PickerCanMove()
     {
-        pickerMovement = gameSession.pickerMoveOnTheScene.GetComponent<PickerMovement>();
-        pickerMovement.canMoveForward = true;
-        gateText.SetActive(false);
+        if (gameSession.levelEnded)
+        {
+            pickerMovement = gameSession.pickerMoveOnTheScene.GetComponent<PickerMovement>();
+            Transform playerSpawnTransform = gameSession.levelsInTheScene[1].transform.GetChild(0).gameObject.transform;
+            pickerMovement.newLevelPosition = playerSpawnTransform.position;
+            pickerMovement.canMoveToTheNextLevel = true;
+            gateText.SetActive(false);
+        }
+        else
+        {
+            pickerMovement = gameSession.pickerMoveOnTheScene.GetComponent<PickerMovement>();
+            pickerMovement.canMoveForward = true;
+            gateText.SetActive(false);
+        }
+        
     }
 
     public void AudioPlay()

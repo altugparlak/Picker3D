@@ -13,6 +13,8 @@ public class ObjectCollector : MonoBehaviour
     GameSession gameSession;
 
     private int collectedObjects = 0;
+    private bool levelFail = false;
+    private bool counter = true;
 
     void Start()
     {
@@ -22,7 +24,11 @@ public class ObjectCollector : MonoBehaviour
 
     void Update()
     {
-        
+        if (levelFail && counter)
+        {
+            gameSession.LevelFailed();
+            levelFail = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,11 +40,21 @@ public class ObjectCollector : MonoBehaviour
 
             if (collectedObjects >= requiredObjectAmount)
             {
+                counter = false;
                 pickerMovement = gameSession.pickerMoveOnTheScene.GetComponent<PickerMovement>();
                 pickerMovement.transform.GetChild(0).gameObject.GetComponent<ObjectPusher>().boxCollider.enabled = false;
                 Invoke("PlatformRiseUp", 1.2f);
             }
+            else
+            {
+                Invoke("LevelFail", 3f);
+            }
         }
+    }
+
+    public void LevelFail()
+    {
+        levelFail = true;
     }
 
     private void PlatformRiseUp()

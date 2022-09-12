@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -14,8 +15,13 @@ public class GameSession : MonoBehaviour
     [Header("Levels")]
     [SerializeField] public List<GameObject> levels;
     [SerializeField] public List<GameObject> levelsInTheScene;
+    public bool levelEnded = false;
 
-
+    [Header("Canvas")]
+    [SerializeField] public GameObject levelCompleteScene;
+    [SerializeField] public GameObject levelFailedScene;
+    [SerializeField] public GameObject everyObjectInTheStartScene;
+    [SerializeField] public GameObject dragToStartButton;
 
     void Awake()
     {
@@ -35,9 +41,11 @@ public class GameSession : MonoBehaviour
         GameObject level = Instantiate(levels[0], new Vector3(0f, 0f, 0f), Quaternion.identity);
         levelsInTheScene.Add(level);
 
-        Transform playerSpawnPosition = levels[0].transform.GetChild(0).gameObject.transform;
-        SwitchToThePickerMove(playerSpawnPosition);
-        //Instantiate(pickerMove, playerSpawnPosition, Quaternion.identity);
+        Transform playerSpawnTransform = levels[0].transform.GetChild(0).gameObject.transform;
+        SwitchToThePickerMove(playerSpawnTransform);
+
+        levelCompleteScene.SetActive(false);
+        levelFailedScene.SetActive(false);
 
     }
 
@@ -55,6 +63,7 @@ public class GameSession : MonoBehaviour
 
         GameObject picker = Instantiate(pickerMove, spawnPosition.position, Quaternion.identity);
         pickerMoveOnTheScene = picker;
+        pickerMoveOnTheScene.GetComponent<PickerMovement>().dragToStart = false;
     }
 
     public void SwitchToThePickerJump(Transform spawnPosition)
@@ -64,6 +73,64 @@ public class GameSession : MonoBehaviour
 
         GameObject picker = Instantiate(pickerJump, spawnPosition.position, Quaternion.identity);
         pickerJumpOnTheScene = picker;
+    }
+
+    public void PickerInTheStartPosition()
+    {
+        dragToStartButton.SetActive(true);
+
+        pickerMoveOnTheScene.GetComponent<PickerMovement>().pickerInTheStartPosition = true;
+        pickerMoveOnTheScene.GetComponent<PickerMovement>().IsCountinueButtonClicked = true;
+
+        everyObjectInTheStartScene.SetActive(true);
+        levelCompleteScene.SetActive(false);
+
+        levelEnded = false;
+
+        GameObject removedLevel = levelsInTheScene[0];
+        levelsInTheScene.Remove(levelsInTheScene[0]);
+        Destroy(removedLevel);
+    }
+
+    public void DragToStartIsClicked()
+    {
+        pickerMoveOnTheScene.GetComponent<PickerMovement>().dragToStart = true;
+        dragToStartButton.SetActive(false);
+    }
+
+    public void LevelFailed()
+    {
+        levelFailedScene.SetActive(true);
+    }
+
+    public void RestartTheLevel()
+    {
+        StartCoroutine(RestartLevel());
+    }
+
+    IEnumerator RestartLevel()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        Time.timeScale = 1f;
+
+        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+        Invoke("RestartOperations", 0.5f);
+    }
+
+    private void RestartOperations()
+    {
+        levelsInTheScene = new List<GameObject>();
+        GameObject level = Instantiate(levels[0], new Vector3(0f, 0f, 0f), Quaternion.identity);
+        levelsInTheScene.Add(level);
+
+        Transform playerSpawnTransform = levels[0].transform.GetChild(0).gameObject.transform;
+        SwitchToThePickerMove(playerSpawnTransform);
+
+        levelCompleteScene.SetActive(false);
+        levelFailedScene.SetActive(false);
+        everyObjectInTheStartScene.SetActive(true);
+        dragToStartButton.SetActive(true);
     }
 
 }
