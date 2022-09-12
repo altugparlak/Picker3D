@@ -38,6 +38,10 @@ public class ObjectCollector : MonoBehaviour
                 pickerMovement.transform.GetChild(0).gameObject.GetComponent<ObjectPusher>().boxCollider.enabled = false;
                 Invoke("PlatformRiseUp", 1.2f);
             }
+            else
+            {
+                gameSession.LevelFailed();
+            }
         }
     }
 

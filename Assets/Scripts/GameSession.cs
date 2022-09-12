@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -21,8 +22,6 @@ public class GameSession : MonoBehaviour
     [SerializeField] public GameObject levelFailedScene;
     [SerializeField] public GameObject everyObjectInTheStartScene;
     [SerializeField] public GameObject dragToStartButton;
-
-
 
     void Awake()
     {
@@ -98,6 +97,25 @@ public class GameSession : MonoBehaviour
     {
         pickerMoveOnTheScene.GetComponent<PickerMovement>().dragToStart = true;
         dragToStartButton.SetActive(false);
+    }
+
+    public void LevelFailed()
+    {
+        levelFailedScene.SetActive(true);
+    }
+
+    public void RestartTheLevel()
+    {
+        StartCoroutine(RestartLevel());
+    }
+
+    IEnumerator RestartLevel()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        Time.timeScale = 1f;
+
+        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 
 }

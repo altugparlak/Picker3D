@@ -572,25 +572,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 322844529, guid: 4bcb7c195e5b14a5cafa5651fa5a823f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 140200947}
     - target: {fileID: 3142254690345791929, guid: 4bcb7c195e5b14a5cafa5651fa5a823f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 140200947}
-    - target: {fileID: 3142254690345791929, guid: 4bcb7c195e5b14a5cafa5651fa5a823f,
+    - target: {fileID: 4937934972922525882, guid: 4bcb7c195e5b14a5cafa5651fa5a823f,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DragToStartIsClicked
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 140200947}
+    - target: {fileID: 4937934972922525884, guid: 4bcb7c195e5b14a5cafa5651fa5a823f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4937934973334585271, guid: 4bcb7c195e5b14a5cafa5651fa5a823f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 140200947}
+    - target: {fileID: 4937934974210676481, guid: 4bcb7c195e5b14a5cafa5651fa5a823f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4937934974309942787, guid: 4bcb7c195e5b14a5cafa5651fa5a823f,
         type: 3}
       propertyPath: m_Pivot.x
