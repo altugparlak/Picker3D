@@ -43,7 +43,6 @@ public class GameSession : MonoBehaviour
 
         Transform playerSpawnTransform = levels[0].transform.GetChild(0).gameObject.transform;
         SwitchToThePickerMove(playerSpawnTransform);
-        //Instantiate(pickerMove, playerSpawnPosition, Quaternion.identity);
 
         levelCompleteScene.SetActive(false);
         levelFailedScene.SetActive(false);
@@ -116,6 +115,22 @@ public class GameSession : MonoBehaviour
 
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+        Invoke("RestartOperations", 0.5f);
+    }
+
+    private void RestartOperations()
+    {
+        levelsInTheScene = new List<GameObject>();
+        GameObject level = Instantiate(levels[0], new Vector3(0f, 0f, 0f), Quaternion.identity);
+        levelsInTheScene.Add(level);
+
+        Transform playerSpawnTransform = levels[0].transform.GetChild(0).gameObject.transform;
+        SwitchToThePickerMove(playerSpawnTransform);
+
+        levelCompleteScene.SetActive(false);
+        levelFailedScene.SetActive(false);
+        everyObjectInTheStartScene.SetActive(true);
+        dragToStartButton.SetActive(true);
     }
 
 }
