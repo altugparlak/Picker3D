@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class PickerJump : MonoBehaviour
 {
-    [SerializeField] private float startSpeed = 2.5f;
-    [SerializeField] private float endSpeed = 2.5f;
+    [SerializeField] private float defaultSpeed = 1.5f;
+    [SerializeField] private float touchSpeedIncrement = 0.5f;
 
-    Rigidbody rb;
+    private float currentSpeed = 1.5f;
     private bool firstTouch = false;
     public bool cantMove = false;
 
+    Rigidbody rb;
+    Touch touch;
+    float elapsed = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +25,27 @@ public class PickerJump : MonoBehaviour
     {
         if (!cantMove)
         {
-            if (!firstTouch)
+            if (Input.touchCount > 0)
             {
-                //StartCoroutine(ChangeSpeed(startSpeed, endSpeed, 3f));
-                firstTouch = true;
+                touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began)
+                {
+                    Debug.Log("Boost!");
+                    currentSpeed += touchSpeedIncrement;
+                    elapsed = 0.0f;
+                    //StartCoroutine(ChangeSpeed(currentSpeed, defaultSpeed, 0.5f));
+                }
+
             }
-            else
+            if (currentSpeed != defaultSpeed)
             {
-                rb.velocity = new Vector3(0f, rb.velocity.y, -startSpeed);
+                currentSpeed = Mathf.Lerp(currentSpeed, defaultSpeed, elapsed / 1f);
+                elapsed += Time.deltaTime;
+
             }
+            rb.velocity = new Vector3(0f, rb.velocity.y, -currentSpeed);
+            Debug.Log(currentSpeed);
 
         }
         else
@@ -46,11 +61,21 @@ public class PickerJump : MonoBehaviour
         float elapsed = 0.0f;
         while (elapsed < duration)
         {
-            startSpeed = Mathf.Lerp(v_start, v_end, elapsed / duration);
+            currentSpeed = Mathf.Lerp(v_start, v_end, elapsed / duration);
             elapsed += Time.deltaTime;
+            Debug.Log(currentSpeed);
             yield return null;
         }
-        startSpeed = v_end;
+        currentSpeed = v_end;
     }
 
 }
+//if (!firstTouch)
+//{
+//    //StartCoroutine(ChangeSpeed(startSpeed, endSpeed, 3f));
+//    firstTouch = true;
+//}
+//else
+//{
+//    rb.velocity = new Vector3(0f, rb.velocity.y, -startSpeed);
+//}

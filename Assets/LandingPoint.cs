@@ -10,6 +10,8 @@ public class LandingPoint : MonoBehaviour
         {
             Debug.Log("Landed!");
             other.GetComponent<PickerJump>().cantMove = true;
+            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
         }
     }
 }

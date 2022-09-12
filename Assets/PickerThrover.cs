@@ -11,7 +11,8 @@ public class PickerThrover : MonoBehaviour
         if (other.tag == "PickerJump")
         {
             Debug.Log("Fırlat!");
-            other.GetComponent<Rigidbody>().AddForce(new Vector3(0f, forceAmount, -forceAmount), ForceMode.Impulse);
+            other.GetComponent<Rigidbody>().AddForce(new Vector3(0f, forceAmount-0.5f, -forceAmount), ForceMode.Impulse);
+            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
         }
     }
 }

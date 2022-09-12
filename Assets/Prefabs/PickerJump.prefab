@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 3342661879409167969}
   - component: {fileID: 7913823864650411034}
   - component: {fileID: 1802782992945356691}
-  - component: {fileID: 3426062727915956385}
   m_Layer: 8
   m_Name: wall (10)
   m_TagString: Untagged
@@ -159,20 +158,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &3426062727915956385
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423860250023722759}
-  m_Material: {fileID: 13400000, guid: 6d379da23aae74ef9961521c9f3748da, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.59
-  m_Height: 1.91
-  m_Direction: 0
-  m_Center: {x: -0.29, y: 0, z: 0}
 --- !u!1 &3200080748770287228
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +328,8 @@ GameObject:
   - component: {fileID: 4946755584045157259}
   - component: {fileID: 4946755584045157258}
   - component: {fileID: 6560546560099770799}
+  - component: {fileID: 2934854966784352907}
+  - component: {fileID: 7930835218499849027}
   m_Layer: 8
   m_Name: wall
   m_TagString: Untagged
@@ -421,10 +408,38 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: 6d379da23aae74ef9961521c9f3748da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.59
-  m_Height: 2.73
+  m_Radius: 1.15
+  m_Height: 3.57
   m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.48, z: -1.21}
+--- !u!136 &2934854966784352907
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4946755584045157263}
+  m_Material: {fileID: 13400000, guid: 6d379da23aae74ef9961521c9f3748da, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.15
+  m_Height: 3.57
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.48, z: -9.38}
+--- !u!136 &7930835218499849027
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4946755584045157263}
+  m_Material: {fileID: 13400000, guid: 6d379da23aae74ef9961521c9f3748da, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.15
+  m_Height: 3.57
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.48, z: -5.34}
 --- !u!1 &4946755585573647961
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,8 +502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7f07de5dee24c3ab06683aee534cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 1.5
-  endSpeed: 2.5
+  defaultSpeed: 1.5
+  touchSpeedIncrement: 3
+  cantMove: 0
 --- !u!65 &1790098254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -750,7 +766,6 @@ GameObject:
   - component: {fileID: 1061572712674975673}
   - component: {fileID: 2609829628007012879}
   - component: {fileID: 5223518080611509285}
-  - component: {fileID: 925925287499412352}
   m_Layer: 8
   m_Name: wall (5)
   m_TagString: Untagged
@@ -819,20 +834,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &925925287499412352
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6314379454497062718}
-  m_Material: {fileID: 13400000, guid: 6d379da23aae74ef9961521c9f3748da, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.59
-  m_Height: 1.91
-  m_Direction: 0
-  m_Center: {x: -0.29, y: 0, z: 0}
 --- !u!1 &7780465170706988435
 GameObject:
   m_ObjectHideFlags: 0

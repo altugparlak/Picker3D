@@ -6,6 +6,8 @@ public class CameraFollowGameObjectMovement : MonoBehaviour
 {
 
     public bool lookingForPickerJump = false;
+    public bool lookingForPickerMove = true;
+
     PickerMovement pickerMovement;
     PickerJump pickerJump;
 
@@ -31,11 +33,28 @@ public class CameraFollowGameObjectMovement : MonoBehaviour
 
         if (lookingForPickerJump)
         {
-            pickerJump = FindObjectOfType<PickerJump>();
+            if (!lookingForPickerMove)
+            {
+                pickerJump = FindObjectOfType<PickerJump>();
+            }
             if (pickerJump != null)
             {
+                Debug.Log("PickerJump is found: " + pickerJump);
                 lookingForPickerJump = false;
             }
+        }
+        if (lookingForPickerMove)
+        {
+            if (!lookingForPickerJump)
+            {
+                pickerMovement = FindObjectOfType<PickerMovement>();
+            }
+            if (pickerMovement != null)
+            {
+                Debug.Log("PickerMovement is found: " + pickerMovement);
+                lookingForPickerMove = false;
+            }
+
         }
     }
 
