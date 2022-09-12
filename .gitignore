@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/Picker3D/[Ll]ibrary/
-/Picker3D/[Tt]emp/
-/Picker3D/[Oo]bj/
-/Picker3D/[Bb]uild/
-/Picker3D/[Bb]uilds/
-/Picker3D/[Ll]ogs/
-/Picker3D/[Uu]ser[Ss]ettings/
+Picker3D/[Ll]ibrary/
+Picker3D/[Tt]emp/
+Picker3D/[Oo]bj/
+Picker3D/[Bb]uild/
+Picker3D/[Bb]uilds/
+Picker3D/[Ll]ogs/
+Picker3D/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
