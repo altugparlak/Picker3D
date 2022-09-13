@@ -33,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 90.00001}
+--- !u!65 &1695583817216565010
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526263423882021317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.35, y: 1, z: 16.05}
+  m_Center: {x: 0.62, y: 0.56, z: -7.5}
 --- !u!1001 &1031049563070398773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collector0
       objectReference: {fileID: 0}
+    - target: {fileID: 4827363268184387056, guid: f35e94c613f274a639b0155049ecab6c,
+        type: 3}
+      propertyPath: frontWall
+      value: 
+      objectReference: {fileID: 1695583817216565010}
     - target: {fileID: 4827363268184387056, guid: f35e94c613f274a639b0155049ecab6c,
         type: 3}
       propertyPath: risingPlatform
@@ -217,8 +235,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gates
       objectReference: {fileID: 0}
+    - target: {fileID: 170749777172801290, guid: 614b9c63eb7ba430e8222a92a2a17141,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 614b9c63eb7ba430e8222a92a2a17141, type: 3}
+--- !u!1 &5526263423882021317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 170749777172801290, guid: 614b9c63eb7ba430e8222a92a2a17141,
+    type: 3}
+  m_PrefabInstance: {fileID: 5687935594347654863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5526263423882021322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 170749777172801285, guid: 614b9c63eb7ba430e8222a92a2a17141,

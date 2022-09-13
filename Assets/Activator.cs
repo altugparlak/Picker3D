@@ -4,6 +4,42 @@ using UnityEngine;
 
 public class Activator : MonoBehaviour
 {
+    [SerializeField] private GameObject spinners;
+    [SerializeField] private GameObject sizeUp;
+    [SerializeField] private GameObject sizeDown;
+
+    [SerializeField] private bool spinnersControl;
+    [SerializeField] private bool sizeUpControl;
+    [SerializeField] private bool sizeDownControl;
+
+
+    GameSession gameSession;
+    //Random yapılacak
+    private void Start()
+    {
+        if (spinnersControl)
+        {
+            spinners.SetActive(true);
+            sizeUp.SetActive(false);
+            sizeDown.SetActive(false);
+        }
+        else if (sizeUpControl)
+        {
+            spinners.SetActive(false);
+            sizeUp.SetActive(true);
+            sizeDown.SetActive(false);
+        }
+        else if (sizeDownControl)
+        {
+            spinners.SetActive(false);
+            sizeUp.SetActive(false);
+            sizeDown.SetActive(true);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     private void Update()
     {
@@ -14,8 +50,36 @@ public class Activator : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<PickerMovement>().ActivateSpinners();
+            if (spinnersControl)
+            {
+                SpinnersActivation(other.gameObject);
+            }
+            else if (sizeUpControl)
+            {
+                SizeUp(other.gameObject);
+            }
+            else if (sizeDownControl)
+            {
+                SizeDown(other.gameObject);
+            }
             Destroy(this.gameObject);
         }
+    }
+
+    private void SpinnersActivation(GameObject gameobject)
+    {
+        gameobject.GetComponent<PickerMovement>().ActivateSpinners();
+        Debug.Log(gameObject.name);
+
+    }
+
+    private void SizeUp(GameObject gameobject2)
+    {
+        gameobject2.transform.localScale += new Vector3(0.2f, 0f, 0f);
+    }
+
+    private void SizeDown(GameObject gameobject3)
+    {
+        gameobject3.transform.localScale -= new Vector3(0.2f, 0f, 0f);
     }
 }

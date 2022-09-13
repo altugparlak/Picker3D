@@ -1,24 +1,25 @@
 ﻿<Properties StartupConfiguration="{60F9E020-740A-CE30-E82F-32A858FF1837}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Buggy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LargeSphere.cs">
     <Files>
       <File FileName="Assets/Scripts/CameraFollowGameObjectMovement.cs" Line="13" Column="1" />
       <File FileName="Assets/Scripts/PickerMovement.cs" Line="37" Column="27" />
-      <File FileName="Assets/Scripts/RisingPlatform.cs" />
-      <File FileName="Assets/Scripts/ObjectCollector.cs" Line="40" Column="62" />
-      <File FileName="Assets/Scripts/CountTheObjects.cs" Line="14" Column="71" />
-      <File FileName="Assets/Scripts/LevelUIHandler.cs" />
-      <File FileName="Assets/Scripts/Gate.cs" />
-      <File FileName="Assets/Scripts/PickerJump.cs" />
-      <File FileName="Assets/Scripts/GameSession.cs" Line="138" Column="65" />
-      <File FileName="Assets/Scripts/RampInitialize.cs" Line="34" Column="82" />
+      <File FileName="Assets/Scripts/RisingPlatform.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/ObjectCollector.cs" Line="37" Column="10" />
+      <File FileName="Assets/Scripts/CountTheObjects.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/LevelUIHandler.cs" Line="14" Column="34" />
+      <File FileName="Assets/Scripts/Gate.cs" Line="39" Column="1" />
+      <File FileName="Assets/Scripts/PickerJump.cs" Line="35" Column="23" />
+      <File FileName="Assets/Scripts/GameSession.cs" Line="55" Column="31" />
+      <File FileName="Assets/Scripts/RampInitialize.cs" Line="31" Column="25" />
       <File FileName="Assets/Scripts/RampStartPostion.cs" Line="17" Column="5" />
       <File FileName="Assets/Level.cs" Line="7" Column="1" />
       <File FileName="Assets/LevelStartPosition.cs" Line="25" Column="17" />
       <File FileName="Assets/CanvasScript.cs" Line="12" Column="10" />
       <File FileName="Assets/CollectibleController.cs" Line="26" Column="1" />
-      <File FileName="Assets/SpinnerMovement.cs" Line="42" Column="46" />
-      <File FileName="Assets/Activator.cs" Line="18" Column="38" />
-      <File FileName="Assets/Buggy.cs" Line="11" Column="15" />
+      <File FileName="Assets/SpinnerMovement.cs" Line="42" Column="1" />
+      <File FileName="Assets/Activator.cs" Line="83" Column="43" />
+      <File FileName="Assets/Buggy.cs" Line="45" Column="1" />
+      <File FileName="Assets/LargeSphere.cs" Line="19" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

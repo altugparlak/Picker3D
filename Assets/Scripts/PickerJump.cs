@@ -32,7 +32,7 @@ public class PickerJump : MonoBehaviour
 
                 if (touch.phase == TouchPhase.Began && !pickerIsJumped)
                 {
-                    Debug.Log("Boost!");
+                    //Debug.Log("Boost!");
                     currentSpeed += touchSpeedIncrement;
                     elapsed = 0.0f;
                     //StartCoroutine(ChangeSpeed(currentSpeed, defaultSpeed, 0.5f));

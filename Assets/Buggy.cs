@@ -42,7 +42,6 @@ public class Buggy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Object")
         {
-            Debug.Log("Push!");
             Vector3 forceDirection = collision.transform.position - parent.transform.position;
             collision.gameObject.GetComponent<Rigidbody>().AddForce(forceAmount * forceDirection, ForceMode.Impulse);
         }

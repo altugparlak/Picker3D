@@ -5,6 +5,7 @@ using TMPro;
 
 public class ObjectCollector : MonoBehaviour
 {
+    [SerializeField] private BoxCollider frontWall;
     [SerializeField] private RisingPlatform risingPlatform;
     [SerializeField] private TextMeshPro pointText;
     [SerializeField] private int requiredObjectAmount = 20;
@@ -19,6 +20,7 @@ public class ObjectCollector : MonoBehaviour
     void Start()
     {
         gameSession = FindObjectOfType<GameSession>();
+        frontWall.enabled = true;
         pointText.text = $" {0} / {requiredObjectAmount}";
     }
 
@@ -43,6 +45,7 @@ public class ObjectCollector : MonoBehaviour
                 counter = false;
                 pickerMovement = gameSession.pickerMoveOnTheScene.GetComponent<PickerMovement>();
                 pickerMovement.transform.GetChild(0).gameObject.GetComponent<ObjectPusher>().boxCollider.enabled = false;
+                frontWall.enabled = false;
                 Invoke("PlatformRiseUp", 1.2f);
             }
             else

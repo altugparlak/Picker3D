@@ -13,6 +13,13 @@ public class CollectibleController : MonoBehaviour
     void Start()
     {
         collectibleCounts = transform.childCount;
+        if (objectDrop)
+        {
+            for (int i = 0; i < collectibleCounts; i++)
+            {
+                transform.GetChild(i).GetComponent<Rigidbody>().useGravity = false;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
