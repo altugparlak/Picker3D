@@ -13,6 +13,7 @@ public class CountTheObjects : MonoBehaviour
         {
             other.GetComponent<PickerMovement>().canMoveForward = false;
             other.GetComponent<PickerMovement>().DeactivateSpinners();
+            other.GetComponent<PickerMovement>().TurnBackToNormalSize();
             other.transform.GetChild(0).gameObject.GetComponent<ObjectPusher>().boxCollider.enabled = true;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             Invoke("LevelFailedCheck", 3f);

@@ -26,6 +26,7 @@ public class PickerMovement : MonoBehaviour
     Rigidbody rb;
     CameraFollowGameObjectMovement cameraFollowGameObjectMovement;
     GameSession gameSession;
+    Vector3 normalSize;
 
 
     private void Start()
@@ -36,6 +37,9 @@ public class PickerMovement : MonoBehaviour
         gameSession = FindObjectOfType<GameSession>();
         DeactivateSpinners();
         cameraFollowGameObjectMovement.lookingForPickerMove = true;
+
+        normalSize = transform.localScale;
+
 
     }
 
@@ -111,6 +115,11 @@ public class PickerMovement : MonoBehaviour
     {
         spinner1.SetActive(false);
         spinner2.SetActive(false);
+    }
+
+    public void TurnBackToNormalSize()
+    {
+        transform.localScale = normalSize;
     }
 
 }
