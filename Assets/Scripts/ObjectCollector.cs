@@ -37,7 +37,7 @@ public class ObjectCollector : MonoBehaviour
         {
             collectedObjects++;
             pointText.text = $" {collectedObjects} / {requiredObjectAmount}";
-
+            other.GetComponent<Collider>().isTrigger = false;
             if (collectedObjects >= requiredObjectAmount)
             {
                 counter = false;

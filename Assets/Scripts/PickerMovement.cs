@@ -6,6 +6,9 @@ public class PickerMovement : MonoBehaviour
 {
     [SerializeField] private float forwardSpeed = 1f;
     [SerializeField] private float horizontalSpeed = 1f;
+    [SerializeField] public GameObject spinner1;
+    [SerializeField] public GameObject spinner2;
+
 
     //private GameObject startImages;
     public Joystick joystick;
@@ -31,6 +34,7 @@ public class PickerMovement : MonoBehaviour
         joystick = FindObjectOfType<FloatingJoystick>();
         cameraFollowGameObjectMovement = FindObjectOfType<CameraFollowGameObjectMovement>();
         gameSession = FindObjectOfType<GameSession>();
+        DeactivateSpinners();
         cameraFollowGameObjectMovement.lookingForPickerMove = true;
 
     }
@@ -95,6 +99,18 @@ public class PickerMovement : MonoBehaviour
         var step = 3 * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, newLevelPosition, step);
 
+    }
+
+    public void ActivateSpinners()
+    {
+        spinner1.SetActive(true);
+        spinner2.SetActive(true);
+    }
+
+    public void DeactivateSpinners()
+    {
+        spinner1.SetActive(false);
+        spinner2.SetActive(false);
     }
 
 }

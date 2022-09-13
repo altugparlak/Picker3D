@@ -53,6 +53,7 @@
     <UnityVersion>2019.4.30f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets/Activator.cs" />
     <Compile Include="Assets/CanvasScript.cs" />
     <Compile Include="Assets/CollectibleController.cs" />
     <Compile Include="Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets/Scripts/RampStartPostion.cs" />
     <Compile Include="Assets/Scripts/RemoveRigidbodyConstraints.cs" />
     <Compile Include="Assets/Scripts/RisingPlatform.cs" />
+    <Compile Include="Assets/SpinnerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
