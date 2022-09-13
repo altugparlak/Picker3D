@@ -6,6 +6,7 @@ public class CountTheObjects : MonoBehaviour
 {
     [SerializeField] private ObjectCollector objectCollector;
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
