@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameSession : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class GameSession : MonoBehaviour
     [SerializeField] public GameObject levelFailedScene;
     [SerializeField] public GameObject everyObjectInTheStartScene;
     [SerializeField] public GameObject dragToStartButton;
+    [SerializeField] public GameObject restartButton;
+
 
     void Awake()
     {
@@ -106,6 +109,7 @@ public class GameSession : MonoBehaviour
     public void RestartTheLevel()
     {
         StartCoroutine(RestartLevel());
+        restartButton.GetComponent<Button>().interactable = false;
     }
 
     IEnumerator RestartLevel()
@@ -131,6 +135,8 @@ public class GameSession : MonoBehaviour
         levelFailedScene.SetActive(false);
         everyObjectInTheStartScene.SetActive(true);
         dragToStartButton.SetActive(true);
+        restartButton.GetComponent<Button>().interactable = true;
+
     }
 
 }

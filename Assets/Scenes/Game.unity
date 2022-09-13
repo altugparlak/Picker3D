@@ -324,6 +324,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1680167058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4937934972922525884, guid: 4bcb7c195e5b14a5cafa5651fa5a823f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4937934974399196895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1892929930412399362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -331,6 +337,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1892929930733616240, guid: 8f5cdfb15bfbd4fb99ee4ce117bba096,
+        type: 3}
+      propertyPath: restartButton
+      value: 
+      objectReference: {fileID: 1680167058}
     - target: {fileID: 1892929930733616240, guid: 8f5cdfb15bfbd4fb99ee4ce117bba096,
         type: 3}
       propertyPath: levelFailedScene

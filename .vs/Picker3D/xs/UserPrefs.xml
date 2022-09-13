@@ -1,30 +1,26 @@
 ﻿<Properties StartupConfiguration="{60F9E020-740A-CE30-E82F-32A858FF1837}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameSession.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CollectibleController.cs">
     <Files>
       <File FileName="Assets/Scripts/CameraFollowGameObjectMovement.cs" Line="13" Column="1" />
-      <File FileName="Assets/Scripts/PickerMovement.cs" Line="92" Column="38" />
-      <File FileName="Assets/Scripts/RisingPlatform.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/ObjectCollector.cs" Line="55" Column="11" />
-      <File FileName="Assets/Scripts/CountTheObjects.cs" Line="18" Column="6" />
-      <File FileName="Assets/Scripts/LevelUIHandler.cs" Line="14" Column="34" />
-      <File FileName="Assets/Scripts/Gate.cs" Line="28" Column="58" />
-      <File FileName="Assets/Scripts/PickerJump.cs" Line="34" Column="18" />
-      <File FileName="Assets/PickerThrover.cs" Line="14" Column="68" />
-      <File FileName="Assets/RemoveRigidbodyConstraints.cs" Line="12" Column="54" />
-      <File FileName="Assets/LandingPoint.cs" Line="41" Column="40" />
-      <File FileName="Assets/Scripts/GameSession.cs" Line="133" Column="43" />
-      <File FileName="Assets/Scripts/RampInitialize.cs" Line="34" Column="82" />
-      <File FileName="Assets/Scripts/RampStartPostion.cs" Line="17" Column="5" />
-      <File FileName="Assets/MoneyDiamond.cs" Line="10" Column="27" />
-      <File FileName="Assets/Level.cs" Line="7" Column="1" />
-      <File FileName="Assets/LevelStartPosition.cs" Line="26" Column="14" />
-      <File FileName="Assets/CanvasScript.cs" Line="12" Column="10" />
-      <File FileName="../../../adsız klasör/Picker3D-main/Assets/Scripts/RemoveRigidbodyConstraints.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/PickerMovement.cs" />
+      <File FileName="Assets/Scripts/RisingPlatform.cs" />
+      <File FileName="Assets/Scripts/ObjectCollector.cs" />
+      <File FileName="Assets/Scripts/CountTheObjects.cs" />
+      <File FileName="Assets/Scripts/LevelUIHandler.cs" />
+      <File FileName="Assets/Scripts/Gate.cs" />
+      <File FileName="Assets/Scripts/PickerJump.cs" />
+      <File FileName="Assets/Scripts/GameSession.cs" Line="39" Column="6" />
+      <File FileName="Assets/Scripts/RampInitialize.cs" />
+      <File FileName="Assets/Scripts/RampStartPostion.cs" />
+      <File FileName="Assets/Level.cs" />
+      <File FileName="Assets/LevelStartPosition.cs" />
+      <File FileName="Assets/CanvasScript.cs" />
+      <File FileName="Assets/CollectibleController.cs" Line="8" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="87de05c7-5cff-4282-93d8-ff8dfdf3cd84" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d288ae33-3832-4e80-b333-8bebd707c98c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
