@@ -1246,6 +1246,7 @@ MonoBehaviour:
   spinnersControl: 1
   sizeUpControl: 0
   sizeDownControl: 0
+  spinnersPull: 1
 --- !u!95 &4679637650713217360
 Animator:
   serializedVersion: 3

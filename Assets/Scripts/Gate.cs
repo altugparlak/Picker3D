@@ -36,7 +36,6 @@ public class Gate : MonoBehaviour
             pickerMovement = gameSession.pickerMoveOnTheScene.GetComponent<PickerMovement>();
             pickerMovement.canMoveForward = true;
             gateText.SetActive(false);
-
             if (buggy!=null)
                 buggy.buggyActive = true;
 
