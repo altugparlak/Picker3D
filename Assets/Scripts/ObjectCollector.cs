@@ -8,19 +8,43 @@ public class ObjectCollector : MonoBehaviour
     [SerializeField] private BoxCollider frontWall;
     [SerializeField] private RisingPlatform risingPlatform;
     [SerializeField] private TextMeshPro pointText;
-    [SerializeField] private int requiredObjectAmount = 20;
+
+    [Header("Level Settings")]
+    [SerializeField] private int gateNumber;
+
 
     PickerMovement pickerMovement;
     GameSession gameSession;
+    LevelSettings levelSettings;
 
+    private int requiredObjectAmount = 20;
     private int collectedObjects = 0;
     private bool levelFail = false;
     private bool counter = true;
 
+
     void Start()
     {
         gameSession = FindObjectOfType<GameSession>();
+        levelSettings = FindObjectOfType<LevelSettings>();
         frontWall.enabled = true;
+
+        switch (gateNumber)
+        {
+            case 3:
+                requiredObjectAmount = levelSettings.stageThreeRequiredCollectibleCounts;
+                break;
+            case 2:
+                requiredObjectAmount = levelSettings.stageTwoRequiredCollectibleCounts;
+                break;
+            case 1:
+                requiredObjectAmount = levelSettings.stageOneRequiredCollectibleCounts;
+                break;
+            default:
+                requiredObjectAmount = levelSettings.stageOneRequiredCollectibleCounts;
+                break;
+        }
+
         pointText.text = $" {0} / {requiredObjectAmount}";
     }
 

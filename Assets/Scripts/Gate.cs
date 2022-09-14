@@ -6,6 +6,7 @@ public class Gate : MonoBehaviour
 {
     [SerializeField] private GameObject gateText;
     [SerializeField] private Buggy buggy;
+    [SerializeField] private Drone drone;
 
     GameSession gameSession;
     PickerMovement pickerMovement;
@@ -38,6 +39,8 @@ public class Gate : MonoBehaviour
             gateText.SetActive(false);
             if (buggy!=null)
                 buggy.buggyActive = true;
+            if (drone!=null)
+                drone.droneActive = true;
 
         }
         

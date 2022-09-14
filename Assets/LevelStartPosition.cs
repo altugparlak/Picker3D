@@ -26,12 +26,15 @@ public class LevelStartPosition : MonoBehaviour
             {
                 other.GetComponent<PickerMovement>().IsCountinueButtonClicked = false;
             }
-            Debug.Log("Picker in the Start Position!");
+            //Debug.Log("Picker in the Start Position!");
             other.GetComponent<PickerMovement>().canMoveToTheNextLevel = false;
             other.GetComponent<PickerMovement>().canMoveForward = false;
             gameSession = FindObjectOfType<GameSession>();
             if (gameSession.levelsInTheScene.Count > 1)
+            {
                 gameSession.levelCompleteScene.SetActive(true);
+                gameSession.SaveLevel();
+            }
         }
     }
 }

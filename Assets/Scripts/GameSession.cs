@@ -25,6 +25,9 @@ public class GameSession : MonoBehaviour
     [SerializeField] public GameObject dragToStartButton;
     [SerializeField] public GameObject restartButton;
 
+    private const string delete = "PrefsTemizle";
+    public const string levelTutucu = "level";
+
 
     void Awake()
     {
@@ -40,11 +43,16 @@ public class GameSession : MonoBehaviour
 
     private void Start()
     {
+        PrefsleriTemizle();
+        Olustur();
+
+        int lastSavedLevel = PlayerPrefs.GetInt(levelTutucu);
+        Debug.Log("Level " + (lastSavedLevel+1) + " is Spawned!");
         levelsInTheScene = new List<GameObject>();
-        GameObject level = Instantiate(levels[0], new Vector3(0f, 0f, 0f), Quaternion.identity);
+        GameObject level = Instantiate(levels[lastSavedLevel], new Vector3(0f, 0f, 0f), Quaternion.identity);
         levelsInTheScene.Add(level);
 
-        Transform playerSpawnTransform = levels[0].transform.GetChild(0).gameObject.transform;
+        Transform playerSpawnTransform = levels[lastSavedLevel].transform.GetChild(0).gameObject.transform;
         SwitchToThePickerMove(playerSpawnTransform);
 
         levelCompleteScene.SetActive(false);
@@ -54,7 +62,10 @@ public class GameSession : MonoBehaviour
 
     public void SpawnNextLevel(Transform nextLevelTransform)
     {
-        GameObject level = Instantiate(levels[0], nextLevelTransform.position, Quaternion.identity);
+        int nextLevel = PlayerPrefs.GetInt(levelTutucu) + 1;
+        Debug.Log("Level " + (nextLevel+1) + " is spawned!");
+
+        GameObject level = Instantiate(levels[nextLevel], nextLevelTransform.position, Quaternion.identity);
         levelsInTheScene.Add(level);
 
     }
@@ -81,7 +92,6 @@ public class GameSession : MonoBehaviour
     public void PickerInTheStartPosition()
     {
         dragToStartButton.SetActive(true);
-
         pickerMoveOnTheScene.GetComponent<PickerMovement>().pickerInTheStartPosition = true;
         pickerMoveOnTheScene.GetComponent<PickerMovement>().IsCountinueButtonClicked = true;
 
@@ -124,11 +134,13 @@ public class GameSession : MonoBehaviour
 
     private void RestartOperations()
     {
-        levelsInTheScene = new List<GameObject>();
-        GameObject level = Instantiate(levels[0], new Vector3(0f, 0f, 0f), Quaternion.identity);
-        levelsInTheScene.Add(level);
+        int currentLevel = PlayerPrefs.GetInt(levelTutucu);
+        Debug.Log("Level " + (currentLevel+1) + " is restarted!");
 
-        Transform playerSpawnTransform = levels[0].transform.GetChild(0).gameObject.transform;
+        levelsInTheScene = new List<GameObject>();
+        GameObject level = Instantiate(levels[currentLevel], new Vector3(0f, 0f, 0f), Quaternion.identity);
+        levelsInTheScene.Add(level);
+        Transform playerSpawnTransform = levels[currentLevel].transform.GetChild(0).gameObject.transform;
         SwitchToThePickerMove(playerSpawnTransform);
 
         levelCompleteScene.SetActive(false);
@@ -137,6 +149,32 @@ public class GameSession : MonoBehaviour
         dragToStartButton.SetActive(true);
         restartButton.GetComponent<Button>().interactable = true;
 
+    }
+
+    private void Olustur()
+    {
+        if (!PlayerPrefs.HasKey(levelTutucu))
+        {
+            PlayerPrefs.SetInt(levelTutucu, 0);
+        }
+    }
+
+    private void PrefsleriTemizle()
+    {
+        if (!PlayerPrefs.HasKey(delete))
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt(delete, 1);
+            Debug.Log("Prefsler Temizlendi");
+        }
+    }
+
+    public void SaveLevel()
+    {
+        int playedLevel = PlayerPrefs.GetInt(levelTutucu);
+        int newLevel = playedLevel + 1;
+        PlayerPrefs.SetInt(levelTutucu, newLevel);
+        Debug.Log("Level " + (newLevel+1) + " is saved!");
     }
 
 }
