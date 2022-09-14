@@ -40,7 +40,6 @@ public class Gate : MonoBehaviour
             gateText.SetActive(false);
 
             int gateNo = objectCollector.gateNumber;
-            Debug.Log(gateNo);
             switch (gateNo)
             {
                 case 3:

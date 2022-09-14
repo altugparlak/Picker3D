@@ -17,6 +17,9 @@ public class GameSession : MonoBehaviour
     [SerializeField] public List<GameObject> levels;
     [SerializeField] public List<GameObject> levelsInTheScene;
     public bool levelEnded = false;
+    public int levelSpawnIndex;
+    public int spwanedNextLevelIndexHolder;
+
 
     [Header("Canvas")]
     [SerializeField] public GameObject levelCompleteScene;
@@ -26,11 +29,20 @@ public class GameSession : MonoBehaviour
     [SerializeField] public GameObject restartButton;
     [SerializeField] public LevelUIHandler levelUIHandler;
 
-    private const string delete = "PrefsTemizle0";
+    private const string delete = "PrefsTemizle";
     public const string levelTutucu = "level";
     public const string levelIndexTutucu = "levelIndex"; // levels listinde en son hangi levelı çağırdığımızı gösterir.
 
-    private int spwanedNextLevelIndexHolder;
+    public const string level1 = "level1"; // bir levelın kaç kere oynandığını tutmak istiyoruz
+    public const string level2 = "level2";
+    public const string level3 = "level3";
+    public const string level4 = "level4";
+    public const string level5 = "level5";
+    public const string level6 = "level6";
+    public const string level7 = "level7";
+    public const string level8 = "level8";
+    public const string level9 = "level9";
+    public const string level10 = "level10";
 
 
     void Awake()
@@ -50,7 +62,6 @@ public class GameSession : MonoBehaviour
         PrefsleriTemizle();
         Olustur();
         int lastSavedLevel = PlayerPrefs.GetInt(levelTutucu);
-        int levelSpawnIndex;
         int lastSpawnedLevelIndex;
         lastSpawnedLevelIndex = PlayerPrefs.GetInt(levelIndexTutucu);
         levelSpawnIndex = lastSpawnedLevelIndex;
@@ -69,6 +80,8 @@ public class GameSession : MonoBehaviour
         levelCompleteScene.SetActive(false);
         levelFailedScene.SetActive(false);
         levelUIHandler.SetLevelIndicators(lastSavedLevel + 1);
+
+        spwanedNextLevelIndexHolder = lastSpawnedLevelIndex;
     }
 
     public void SpawnNextLevel(Transform nextLevelTransform)
@@ -190,9 +203,60 @@ public class GameSession : MonoBehaviour
         {
             PlayerPrefs.SetInt(levelTutucu, 0);
         }
+
         if (!PlayerPrefs.HasKey(levelIndexTutucu))
         {
             PlayerPrefs.SetInt(levelTutucu, 0);
+        }
+
+        if (!PlayerPrefs.HasKey(level1))
+        {
+            PlayerPrefs.SetInt(level1, 0);
+        }
+
+        if (!PlayerPrefs.HasKey(level2))
+        {
+            PlayerPrefs.SetInt(level2, 0);
+        }
+
+        if (!PlayerPrefs.HasKey(level3))
+        {
+            PlayerPrefs.SetInt(level3, 0);
+        }
+
+        if (!PlayerPrefs.HasKey(level4))
+        {
+            PlayerPrefs.SetInt(level4, 0);
+        }
+
+        if (!PlayerPrefs.HasKey(level5))
+        {
+            PlayerPrefs.SetInt(level5, 0);
+        }
+
+        if (!PlayerPrefs.HasKey(level6))
+        {
+            PlayerPrefs.SetInt(level6, 0);
+        }
+
+        if (!PlayerPrefs.HasKey(level7))
+        {
+            PlayerPrefs.SetInt(level7, 0);
+        }
+
+        if (!PlayerPrefs.HasKey(level8))
+        {
+            PlayerPrefs.SetInt(level8, 0);
+        }
+
+        if (!PlayerPrefs.HasKey(level9))
+        {
+            PlayerPrefs.SetInt(level9, 0);
+        }
+
+        if (!PlayerPrefs.HasKey(level10))
+        {
+            PlayerPrefs.SetInt(level10, 0);
         }
     }
 
@@ -208,6 +272,65 @@ public class GameSession : MonoBehaviour
 
     public void SaveLevel()
     {
+        int completedLevelIndex = PlayerPrefs.GetInt(levelIndexTutucu);
+        int number = 1;
+        switch (completedLevelIndex)
+        {
+            case 9:
+                number = PlayerPrefs.GetInt(level10) + 1;
+                PlayerPrefs.SetInt(level10, number);
+                Debug.Log("level10 is played for " + number + " times.");
+                break;
+            case 8:
+                number = PlayerPrefs.GetInt(level9) + 1;
+                PlayerPrefs.SetInt(level9, number);
+                Debug.Log("level9 is played for " + number + " times.");
+                break;
+            case 7:
+                number = PlayerPrefs.GetInt(level8) + 1;
+                PlayerPrefs.SetInt(level8, number);
+                Debug.Log("level8 is played for " + number + " times.");
+                break;
+            case 6:
+                number = PlayerPrefs.GetInt(level7) + 1;
+                PlayerPrefs.SetInt(level7, number);
+                Debug.Log("level7 is played for " + number + " times.");
+                break;
+            case 5:
+                number = PlayerPrefs.GetInt(level6) + 1;
+                PlayerPrefs.SetInt(level6, number);
+                Debug.Log("level6 is played for " + number + " times.");
+                break;
+            case 4:
+                number = PlayerPrefs.GetInt(level5) + 1;
+                PlayerPrefs.SetInt(level5, number);
+                Debug.Log("level5 is played for " + number + " times.");
+                break;
+            case 3:
+                number = PlayerPrefs.GetInt(level4) + 1;
+                PlayerPrefs.SetInt(level4, number);
+                Debug.Log("level4 is played for " + number + " times.");
+                break;
+            case 2:
+                number = PlayerPrefs.GetInt(level3) + 1;
+                PlayerPrefs.SetInt(level3, number);
+                Debug.Log("level3 is played for " + number + " times.");
+                break;
+            case 1:
+                number = PlayerPrefs.GetInt(level2) + 1;
+                PlayerPrefs.SetInt(level2, number);
+                Debug.Log("level2 is played for " + number + " times.");
+                break;
+            case 0:
+                number = PlayerPrefs.GetInt(level1) + 1;
+                PlayerPrefs.SetInt(level1, number);
+                Debug.Log("level1 is played for " + number + " times.");
+                break;
+            default:
+                break;
+
+
+        }
         int playedLevel = PlayerPrefs.GetInt(levelTutucu);
         int newLevel = playedLevel + 1;
         PlayerPrefs.SetInt(levelTutucu, newLevel);
@@ -216,5 +339,6 @@ public class GameSession : MonoBehaviour
         levelUIHandler.SetLevelIndicators(newLevel + 1);
 
     }
+
 
 }

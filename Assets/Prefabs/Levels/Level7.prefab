@@ -5525,6 +5525,11 @@ PrefabInstance:
       propertyPath: requiredObjectAmount
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5526263421961776325, guid: 5b8825d48870f489a83ce75450e022c4,
+        type: 3}
+      propertyPath: maxPossibleCollectibleObjects
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5526263422181012450, guid: 5b8825d48870f489a83ce75450e022c4,
         type: 3}
       propertyPath: m_Name
@@ -5649,6 +5654,11 @@ PrefabInstance:
         type: 3}
       propertyPath: requiredObjectAmount
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526263421961776325, guid: 5b8825d48870f489a83ce75450e022c4,
+        type: 3}
+      propertyPath: maxPossibleCollectibleObjects
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5526263422181012450, guid: 5b8825d48870f489a83ce75450e022c4,
         type: 3}
@@ -5803,7 +5813,7 @@ PrefabInstance:
     - target: {fileID: 4788997148953294374, guid: 97d3aa68d5c744bc0b4172c31390fe0f,
         type: 3}
       propertyPath: stageOneRequiredCollectibleCounts
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4788997148953294374, guid: 97d3aa68d5c744bc0b4172c31390fe0f,
         type: 3}
@@ -5854,6 +5864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: requiredObjectAmount
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526263421961776325, guid: 5b8825d48870f489a83ce75450e022c4,
+        type: 3}
+      propertyPath: maxPossibleCollectibleObjects
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 5526263422181012450, guid: 5b8825d48870f489a83ce75450e022c4,
         type: 3}

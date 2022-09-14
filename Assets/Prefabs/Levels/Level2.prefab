@@ -5023,6 +5023,11 @@ PrefabInstance:
       propertyPath: requiredObjectAmount
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5526263421961776325, guid: 5b8825d48870f489a83ce75450e022c4,
+        type: 3}
+      propertyPath: maxPossibleCollectibleObjects
+      value: 37
+      objectReference: {fileID: 0}
     - target: {fileID: 5526263422181012450, guid: 5b8825d48870f489a83ce75450e022c4,
         type: 3}
       propertyPath: m_Name
@@ -5437,6 +5442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: requiredObjectAmount
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526263421961776325, guid: 5b8825d48870f489a83ce75450e022c4,
+        type: 3}
+      propertyPath: maxPossibleCollectibleObjects
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5526263422181012450, guid: 5b8825d48870f489a83ce75450e022c4,
         type: 3}
@@ -6527,6 +6537,11 @@ PrefabInstance:
         type: 3}
       propertyPath: requiredObjectAmount
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526263421961776325, guid: 5b8825d48870f489a83ce75450e022c4,
+        type: 3}
+      propertyPath: maxPossibleCollectibleObjects
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 5526263422181012450, guid: 5b8825d48870f489a83ce75450e022c4,
         type: 3}
