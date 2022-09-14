@@ -26,8 +26,11 @@ public class GameSession : MonoBehaviour
     [SerializeField] public GameObject restartButton;
     [SerializeField] public LevelUIHandler levelUIHandler;
 
-    private const string delete = "PrefsTemizle";
+    private const string delete = "PrefsTemizle0";
     public const string levelTutucu = "level";
+    public const string levelIndexTutucu = "levelIndex"; // levels listinde en son hangi levelı çağırdığımızı gösterir.
+
+    private int spwanedNextLevelIndexHolder;
 
 
     void Awake()
@@ -48,12 +51,20 @@ public class GameSession : MonoBehaviour
         Olustur();
 
         int lastSavedLevel = PlayerPrefs.GetInt(levelTutucu);
-        Debug.Log("Level " + (lastSavedLevel+1) + " is Spawned!");
+        int levelSpawnIndex;
+        int lastSpawnedLevelIndex;
+        lastSpawnedLevelIndex = PlayerPrefs.GetInt(levelIndexTutucu);
+        levelSpawnIndex = lastSpawnedLevelIndex;
+
+        Debug.Log("Level " + (lastSavedLevel + 1) + " is Spawned!");
+
+
         levelsInTheScene = new List<GameObject>();
-        GameObject level = Instantiate(levels[lastSavedLevel], new Vector3(0f, 0f, 0f), Quaternion.identity);
+        GameObject level = Instantiate(levels[levelSpawnIndex], new Vector3(0f, 0f, 0f), Quaternion.identity);
         levelsInTheScene.Add(level);
 
-        Transform playerSpawnTransform = levels[lastSavedLevel].transform.GetChild(0).gameObject.transform;
+        PlayerPrefs.SetInt(levelIndexTutucu, levelSpawnIndex);
+        Transform playerSpawnTransform = levels[levelSpawnIndex].transform.GetChild(0).gameObject.transform;
         SwitchToThePickerMove(playerSpawnTransform);
 
         levelCompleteScene.SetActive(false);
@@ -64,10 +75,23 @@ public class GameSession : MonoBehaviour
     public void SpawnNextLevel(Transform nextLevelTransform)
     {
         int nextLevel = PlayerPrefs.GetInt(levelTutucu) + 1;
+        int levelSpawnIndexx;
+        if (nextLevel > 9) // Is greater than our list of Levels
+        {
+            int randomLevel = Random.Range(0, 10);
+            levelSpawnIndexx = randomLevel;
+        }
+        else
+        {
+            levelSpawnIndexx = nextLevel;
+        }
         Debug.Log("Level " + (nextLevel+1) + " is spawned!");
 
-        GameObject level = Instantiate(levels[nextLevel], nextLevelTransform.position, Quaternion.identity);
+        GameObject level = Instantiate(levels[levelSpawnIndexx], nextLevelTransform.position, Quaternion.identity);
         levelsInTheScene.Add(level);
+        spwanedNextLevelIndexHolder = levelSpawnIndexx;
+        //PlayerPrefs.SetInt(levelIndexTutucu, levelSpawnIndexx);
+
 
     }
 
@@ -136,12 +160,20 @@ public class GameSession : MonoBehaviour
     private void RestartOperations()
     {
         int currentLevel = PlayerPrefs.GetInt(levelTutucu);
+        int levelSpawnIndexxx;
+        int lastSpawnedLevelIndex;
+        lastSpawnedLevelIndex = PlayerPrefs.GetInt(levelIndexTutucu);
+        levelSpawnIndexxx = lastSpawnedLevelIndex;
+
+
         Debug.Log("Level " + (currentLevel+1) + " is restarted!");
 
         levelsInTheScene = new List<GameObject>();
-        GameObject level = Instantiate(levels[currentLevel], new Vector3(0f, 0f, 0f), Quaternion.identity);
+        GameObject level = Instantiate(levels[levelSpawnIndexxx], new Vector3(0f, 0f, 0f), Quaternion.identity);
         levelsInTheScene.Add(level);
-        Transform playerSpawnTransform = levels[currentLevel].transform.GetChild(0).gameObject.transform;
+        PlayerPrefs.SetInt(levelIndexTutucu, levelSpawnIndexxx);
+
+        Transform playerSpawnTransform = levels[levelSpawnIndexxx].transform.GetChild(0).gameObject.transform;
         SwitchToThePickerMove(playerSpawnTransform);
 
         levelCompleteScene.SetActive(false);
@@ -149,12 +181,17 @@ public class GameSession : MonoBehaviour
         everyObjectInTheStartScene.SetActive(true);
         dragToStartButton.SetActive(true);
         restartButton.GetComponent<Button>().interactable = true;
+        levelUIHandler.SetLevelIndicators(currentLevel+1);
 
     }
 
     private void Olustur()
     {
         if (!PlayerPrefs.HasKey(levelTutucu))
+        {
+            PlayerPrefs.SetInt(levelTutucu, 0);
+        }
+        if (!PlayerPrefs.HasKey(levelIndexTutucu))
         {
             PlayerPrefs.SetInt(levelTutucu, 0);
         }
@@ -175,6 +212,7 @@ public class GameSession : MonoBehaviour
         int playedLevel = PlayerPrefs.GetInt(levelTutucu);
         int newLevel = playedLevel + 1;
         PlayerPrefs.SetInt(levelTutucu, newLevel);
+        PlayerPrefs.SetInt(levelIndexTutucu, spwanedNextLevelIndexHolder);
         Debug.Log("Level " + (newLevel+1) + " is saved!");
         levelUIHandler.SetLevelIndicators(newLevel + 1);
 
