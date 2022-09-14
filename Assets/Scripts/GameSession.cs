@@ -49,7 +49,6 @@ public class GameSession : MonoBehaviour
     {
         PrefsleriTemizle();
         Olustur();
-
         int lastSavedLevel = PlayerPrefs.GetInt(levelTutucu);
         int levelSpawnIndex;
         int lastSpawnedLevelIndex;
@@ -76,7 +75,7 @@ public class GameSession : MonoBehaviour
     {
         int nextLevel = PlayerPrefs.GetInt(levelTutucu) + 1;
         int levelSpawnIndexx;
-        if (nextLevel > 9) // Is greater than our list of Levels
+        if (nextLevel > levels.Count - 1) // Is greater than our list of Levels
         {
             int randomLevel = Random.Range(0, 10);
             levelSpawnIndexx = randomLevel;
