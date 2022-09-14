@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelBox1: {fileID: 8602941276996460661}
-  levelBox2: {fileID: 8602941276996460661}
+  levelBox2: {fileID: 8602941276825272934}
   levelBox3: {fileID: 8602941275889303754}
   currentLevelText: {fileID: 3780589893972814924}
   nextLevelText: {fileID: 5101318598108208411}

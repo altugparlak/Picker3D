@@ -251,6 +251,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4937934974399196895}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1349122175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4937934972905577587, guid: 4bcb7c195e5b14a5cafa5651fa5a823f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4937934974399196895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f15c52886ce40d59857d1acc1e97e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1664527692 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4937934972808594323, guid: 4bcb7c195e5b14a5cafa5651fa5a823f,
@@ -342,6 +354,11 @@ PrefabInstance:
       propertyPath: restartButton
       value: 
       objectReference: {fileID: 1680167058}
+    - target: {fileID: 1892929930733616240, guid: 8f5cdfb15bfbd4fb99ee4ce117bba096,
+        type: 3}
+      propertyPath: levelUIHandler
+      value: 
+      objectReference: {fileID: 1349122175}
     - target: {fileID: 1892929930733616240, guid: 8f5cdfb15bfbd4fb99ee4ce117bba096,
         type: 3}
       propertyPath: levelFailedScene

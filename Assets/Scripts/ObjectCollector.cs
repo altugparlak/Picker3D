@@ -10,7 +10,7 @@ public class ObjectCollector : MonoBehaviour
     [SerializeField] private TextMeshPro pointText;
 
     [Header("Level Settings")]
-    [SerializeField] private int gateNumber;
+    [SerializeField] public int gateNumber;
 
 
     PickerMovement pickerMovement;

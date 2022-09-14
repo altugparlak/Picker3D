@@ -8,20 +8,18 @@ public class PickerJump : MonoBehaviour
     [SerializeField] private float touchSpeedIncrement = 0.5f;
 
     private float currentSpeed = 1.5f;
-    private bool firstTouch = false;
     public bool cantMove = false;
     public bool pickerIsJumped = false;
 
     Rigidbody rb;
     Touch touch;
     float elapsed = 0.0f;
-    // Start is called before the first frame update
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!cantMove)
@@ -35,7 +33,6 @@ public class PickerJump : MonoBehaviour
                     //Debug.Log("Boost!");
                     currentSpeed += touchSpeedIncrement;
                     elapsed = 0.0f;
-                    //StartCoroutine(ChangeSpeed(currentSpeed, defaultSpeed, 0.5f));
                 }
 
             }
@@ -54,7 +51,6 @@ public class PickerJump : MonoBehaviour
             rb.velocity = new Vector3(0f, 0f, 0f);
 
         }
-        //Debug.Log(rb.velocity.z);
     }
 
     IEnumerator ChangeSpeed(float v_start, float v_end, float duration)
@@ -71,12 +67,3 @@ public class PickerJump : MonoBehaviour
     }
 
 }
-//if (!firstTouch)
-//{
-//    //StartCoroutine(ChangeSpeed(startSpeed, endSpeed, 3f));
-//    firstTouch = true;
-//}
-//else
-//{
-//    rb.velocity = new Vector3(0f, rb.velocity.y, -startSpeed);
-//}

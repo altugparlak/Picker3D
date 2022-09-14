@@ -7732,7 +7732,7 @@ PrefabInstance:
     - target: {fileID: 4788997148953294374, guid: 97d3aa68d5c744bc0b4172c31390fe0f,
         type: 3}
       propertyPath: stageThreeRequiredCollectibleCounts
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97d3aa68d5c744bc0b4172c31390fe0f, type: 3}

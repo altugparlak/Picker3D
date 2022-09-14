@@ -7,6 +7,7 @@ public class Gate : MonoBehaviour
     [SerializeField] private GameObject gateText;
     [SerializeField] private Buggy buggy;
     [SerializeField] private Drone drone;
+    [SerializeField] private ObjectCollector objectCollector;
 
     GameSession gameSession;
     PickerMovement pickerMovement;
@@ -37,6 +38,25 @@ public class Gate : MonoBehaviour
             pickerMovement = gameSession.pickerMoveOnTheScene.GetComponent<PickerMovement>();
             pickerMovement.canMoveForward = true;
             gateText.SetActive(false);
+
+            int gateNo = objectCollector.gateNumber;
+            Debug.Log(gateNo);
+            switch (gateNo)
+            {
+                case 3:
+                    gameSession.levelUIHandler.StageThreeCompleted();
+                    break;
+                case 2:
+                    gameSession.levelUIHandler.StageTwoCompleted();
+                    break;
+                case 1:
+                    gameSession.levelUIHandler.StageOneCompleted();
+                    break;
+                default:
+                    gameSession.levelUIHandler.StageOneCompleted();
+                    break;
+            }
+
             if (buggy!=null)
                 buggy.buggyActive = true;
             if (drone!=null)

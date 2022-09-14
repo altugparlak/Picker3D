@@ -24,6 +24,7 @@ public class GameSession : MonoBehaviour
     [SerializeField] public GameObject everyObjectInTheStartScene;
     [SerializeField] public GameObject dragToStartButton;
     [SerializeField] public GameObject restartButton;
+    [SerializeField] public LevelUIHandler levelUIHandler;
 
     private const string delete = "PrefsTemizle";
     public const string levelTutucu = "level";
@@ -57,7 +58,7 @@ public class GameSession : MonoBehaviour
 
         levelCompleteScene.SetActive(false);
         levelFailedScene.SetActive(false);
-
+        levelUIHandler.SetLevelIndicators(lastSavedLevel + 1);
     }
 
     public void SpawnNextLevel(Transform nextLevelTransform)
@@ -175,6 +176,8 @@ public class GameSession : MonoBehaviour
         int newLevel = playedLevel + 1;
         PlayerPrefs.SetInt(levelTutucu, newLevel);
         Debug.Log("Level " + (newLevel+1) + " is saved!");
+        levelUIHandler.SetLevelIndicators(newLevel + 1);
+
     }
 
 }

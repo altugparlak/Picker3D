@@ -26,7 +26,7 @@ public class RampInitialize : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("RampInitialize!");
+            //Debug.Log("RampInitialize!");
 
             gameSession.SpawnNextLevel(nextLevelTransform);
             other.GetComponent<PickerMovement>().canMoveForward = false;
